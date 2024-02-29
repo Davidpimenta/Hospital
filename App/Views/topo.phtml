@@ -1,29 +1,37 @@
-<nav class="navbar fixed-top bg-body-tertiary">
+<script src="/script/top.js"></script>
+<nav class="navbar fixed-top bg-body-tertiary pb-0 shadow">
   <div class="container-fluid">
-    <a class="navbar-brand">Logo</a>
+    <a class="navbar-brand">Hospital São Rafael</a>
     <div class="d-flex">
-      <a href="#" type="button" class="btn btn-info">Sobre o site</a>
+      <a href="#" type="button" class="btn fs-6">Sobre o site</a>
     </div>
   </div>
-  <div class="container-fluid menucontainer">
-    <div class="container-sm menu">
-      <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Nossos médicos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Nossos Serviços</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contatos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contatos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contatos</a>
-      </li>
-      </ul>
+  <div class="px-md-5 w-100 container-sm menucontainer">
+    <div class="p-0 d-flex container-fluid menu flex-row align-items-end">
+      
+      <div onclick="abrirOpt(event)" class="text-decoration-none rounded-top p-2  w-25 d-flex 
+      justify-content-center responsive-font  align-items-center text-center opt">
+        Nossos médicos
+      </div>
+      
+      <span class="mx-md-3 m-1 d-inline-block"></span>
+      
+      <div onclick="abrirOpt(event)" class="rounded-top text-center p-2  w-25 d-flex justify-content-center responsive-font align-items-center text-center opt">
+        Nossos serviços
+      </div>
+     
+      <span class="mx-md-3 m-1 d-inline-block"></span>
+      
+      <div onclick="abrirOpt(event)" class="rounded-top p-2  w-25 d-flex justify-content-center responsive-font text-center align-items-center text-center opt">
+        Contato
+      </div>
+      
+      <span class="mx-md-3 m-1 my-1 d-inline-block"></span>
+      
+      <div onclick="abrirOpt(event)" class="rounded-top text-center p-2  w-25 d-flex justify-content-center responsive-font align-items-center text-center opt">
+        Agendamento
+      </div>
+    
     </div>
   </div>
 </nav>

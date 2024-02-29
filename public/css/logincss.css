@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+:root {
+  --font: "Open Sans", sans-serif;
+  --fontTitle: "Grand Hotel", cursive;
+  --color1: #8c2519;
+  --color2: #2b3856;
+  --color3: #ededed;
+}
+
+body {
+  background-color: var(--color3);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: 40%;
+  background-color: var(--color2);
+}
+
+.container-login {
+  width: 100%;
+  height: 60%;
+  background-color: transparent;
+}
+
+.container-banner-text p{
+  color: white;
+}
+
+.container-content-banner h1,
+p {
+  color: white;
+}
+
+.btn-login {
+  background-color: transparent;
+  border: 1px solid var(--color1);
+  color: var(--color1);
+}
+
+.btn-login:hover {
+  border: 1px solid var(--color1);
+  background-color: var(--color1);
+  color: var(--color2);
+}
+@media (min-width: 1200px) {
+  main {
+    width: 75%;
+    height: 75%;
+    border-radius: 15px;
+  }
+
+  .banner {
+    width: 40%;
+    height: 100%;
+  }
+
+  .container-login {
+    width: 60%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  main {
+  }
+  .banner {
+  }
+
+  .container-login {
+  }
+}
+
+.btn-create {
+  background-color: transparent;
+  border: 1px solid var(--color2);
+  color: var(--color2);
+}
+
+.btn-create:hover {
+  background-color: var(--color2);
+  border-color: var(--color2);
+  color: var(--color1);
+}
+
+.container-content-create h1,p {
+  color: black;
+}

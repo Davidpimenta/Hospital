@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/css.css">
 <?php
 
 	//ini_set('error_reporting', 'E_STRICT');

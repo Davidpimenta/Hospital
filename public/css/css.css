@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+:root {
+  --font: "Open Sans", sans-serif;
+  --fontTitle: "Grand Hotel", cursive;
+  --color1: #8c2519;
+  --color2: #2b3856;
+  --color3: #ededed;
+}
+
+* {
+  font-family: var(--font);
+}
+
+body {
+  background-color: #ededed;
+}
+nav.navbar {
+  background-color: #ededed !important;
+}
+
+a.navbar-brand {
+  font-family: var(--fontTitle);
+  font-size: 30px !important;
+}
+
+a.btn {
+  color: white;
+  background-color: var(--color2);
+}
+
+.menu {
+  padding-top: 5px;
+}
+
+.menucontainer {
+  border-bottom: 2px solid #8c2519 !important;
+  z-index: 9999;
+}
+
+.menu div {
+  cursor: pointer;
+  background-color: transparent;
+  color: black !important;
+  transition: 0.2s all;
+}
+
+.menu div.act {
+  background-color: var(--color1);
+  color: white !important;
+  transition: 0.5s all;
+}
+
+.menu span {
+  width: 1px;
+  height: 22px;
+  background-color: var(--color1) !important;
+}
+
+@media (min-width: 1200px) {
+  .responsive-font {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .responsive-font {
+    font-size: 12px;
+  }
+}
