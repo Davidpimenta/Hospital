@@ -1,32 +1,107 @@
-<body class="d-flex justify-content-center align-items-center">
-<main class="container-xl p-0 shadow-lg d-flex flex-xl-row flex-column">
-  <section class="banner d-flex justify-content-center align-items-center">
+<?php
+  
+  if(isset($_GET['erro']) && $_GET['erro'] == 'true'){?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {  
+            <?php session_start();?>
+            let nome = document.getElementById('inputName5');
+            let email = document.getElementById('inputEmail5');
+            let senha = document.getElementById('inputPassword5');
+            nome.value = "<?php echo $_SESSION['nome'] ?>";
+            email.value = "<?php echo $_SESSION['email'] ?>";
+            senha.value = "<?php echo $_SESSION['senha'] ?>";
+            
+        });
+    </script> 
+
+   <?php $this->view->erroCadastro = true;  }
+
+  if(isset($_GET['erroL']) && $_GET['erroL'] == 'true'){?>
+
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {  
+            <?php session_start();?>
+            let email = document.getElementById('inputEmail2');
+            let senha = document.getElementById('inputPassword2');
+            email.value = "<?php echo $_SESSION['email'] ?>";
+            senha.value = "<?php echo $_SESSION['senha'] ?>";
+
+
+            let btn_banner = document.querySelector('.btn-banner');
+            if (btn_banner) {
+                btn_banner.click();
+            }
+            
+        });
+    </script> 
+   
+   <?php $this->view->erroLogin = true;
+
+   
+  }
+?>
+
+
+
+<script src="/script/login.js"></script>
+<body class="d-flex flex-column">
+<main class="container-xl p-0 d-flex flex-xl-row flex-column">
+  <section class="py-4 banner d-flex justify-content-center align-items-center">
     <div class="container-content-banner container-fluid w-75">
       <div class="container-banner-title d-flex justify-content-center"><h1 class="fs-4">Bem vindo!</h1></div>
-      <div class="container-banner-text d-flex justify-content-center"><p class="text-center fs-6">Faça login e venha ser tratado pelos melhores do país!</p></div>
-      <div class="container-banner-button d-flex justify-content-center"><button target="button" class="btn-login btn px-3 py-2 fs-6 fw-bold">Login</button></div>
+      <div class="container-banner-text d-flex justify-content-center"><p class="text-center fs-6 banner-p">Faça login e venha ser tratado pelos melhores do país!</p></div>
+      <div class="container-banner-button d-flex justify-content-center"><button target="button" class="btn-banner btn px-3 py-2 fs-6 fw-bold" onclick="login(event)" >Login</button></div>
     </div>
   </section>
-  <section class="container-login container-fluid d-flex justify-content-center align-items-center">
+  <section class="container-login py-4 container-fluid d-flex justify-content-center align-items-center">
     <div class="container-content-create container-fluid w-75 justify-content-center align-items-center"> 
-      
     <div class="container-create-title"><h2 class="fs-4 text-center fw-bold">Criar conta</h2></div>
-      <div class="container-create-text"><p class="fs-6">Crie a sua conta e venha ser tratado pelos melhores do país!</p></div>
-    
-      <form action="/home" method="post" class="d-flex gap-1 flex-column">
+      <div class="container-create-text">
+        <p class="fs-6">Crie a sua conta e venha ser tratado pelos melhores do país!</p>
+      </div>
+      <form action="/registrar" method="post" class="d-flex gap-1 flex-column">
 
-        <label for="inputName5" class="form-label my-1">Nome</label>
-        <input type="name" id="inputName5" class="form-control" aria-describedby="NameHelpBlock">
-        
-        <label for="inputEmail5" class="form-label my-1">Email</label>
-        <input type="email" id="inputEmail5" class="form-control" aria-describedby="emailHelpBlock">
-        
-        <label for="inputPassword5" class="form-label my-1">Password</label>
-        <input type="password" id="inputPassword5" class="form-control mb-2" aria-describedby="passwordHelpBlock">
+      <label for="inputName5" class="form-label my-1 lbc">Nome</label>
+      <input type="name" name="nome" id="inputName5" class="form-control ci <?php if($this->view->erroCadastro){?> border border-danger <?php  } ?>" 
+      aria-describedby="NameHelpBlock">
+      
+      <label for="inputEmail5" class="form-label my-1 lbc">Email</label>
+      <input type="email" name="email" id="inputEmail5" class="form-control ci <?php if($this->view->erroCadastro){?> border border-danger <?php  } ?>" aria-describedby="emailHelpBlock">
+      
+      <label for="inputPassword5" class="form-label my-1 lbc">Senha</label>
+      <input type="password" name="senha" id="inputPassword5" class="form-control mb-2 ci <?php if($this->view->erroCadastro){?> border border-danger <?php  } ?>" aria-describedby="passwordHelpBlock">
 
-        <button class="btn btn-create fw-bold">Cadastre-se</button>
+      <button class="btn btn-create fw-bold btnc">Cadastre-se</button>
+      <?php if($this->view->erroCadastro){ ?>
+        
+        <small class="form-text text-danger erro">*Erro ao tentar realizar o cadastro, verifique se os campos foram preenchidos corretamente.</small>
+        
+      <?php } ?>
       </form>
     </div>
+
+    <div class="d-none container-content-login container-fluid d-flex justify-content-center align-items-center w-75 flex-column">
+    <div class="container-login-title entrarAnimacao"><h2 class="fs-4 text-center fw-bold">Fazer Login</h2></div>
+      <div class="container-login-text entrarAnimacao"><p class="fs-6">Seja bem vindo de volta aos melhores do país!</p></div>
+      
+      <form action="/autenticar" method="post" class="d-flex gap-1 flex-column w-100">
+
+        <label for="inputEmail2" class="form-label entrarAnimacao my-1 lbl">Email</label>
+        <input type="email" name="email" id="inputEmail2" class="form-control li entrarAnimacao <?php if($this->view->erroLogin){?> border border-danger <?php  } ?>" aria-describedby="emailHelpBlock">
+
+        <label for="inputPassword2" class="form-label my-1 lbl entrarAnimacao">Senha</label>
+        <input type="password" name="senha" id="inputPassword2" class="form-control mb-2 li entrarAnimacao <?php if($this->view->erroLogin){?> border border-danger <?php  } ?>" aria-describedby="passwordHelpBlock">
+
+        <button class="btn btn-create fw-bold btnl entrarAnimacao">Logar</button>
+
+        <?php if($this->view->erroLogin){ ?>
+        
+        <small class="form-text text-danger erroL">*Erro ao tentar realizar o login, verifique se os campos foram preenchidos corretamente.</small>
+      <?php } ?>
+      </form>
+    </div>
+
   </section>
 </main>
 </body>

@@ -9,13 +9,20 @@
 }
 
 body {
+  min-height: 100vh;
+}
+html {
+  min-height: 100vh;
+}
+
+body {
+  justify-content: start;
+  align-items: start;
   background-color: var(--color3);
 }
 
 main {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
 }
 
 .banner {
@@ -26,11 +33,10 @@ main {
 
 .container-login {
   width: 100%;
-  height: 60%;
   background-color: transparent;
 }
 
-.container-banner-text p{
+.container-banner-text p {
   color: white;
 }
 
@@ -39,27 +45,42 @@ p {
   color: white;
 }
 
-.btn-login {
+.btn-banner {
   background-color: transparent;
   border: 1px solid var(--color1);
   color: var(--color1);
 }
 
-.btn-login:hover {
+.btn-banner:hover {
   border: 1px solid var(--color1);
   background-color: var(--color1);
   color: var(--color2);
 }
 @media (min-width: 1200px) {
+  body{
+    justify-content: center;
+    align-items: center;
+  }
+
+  body,
+  html {
+    height: 100vh;
+  }
   main {
     width: 75%;
     height: 75%;
     border-radius: 15px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   }
 
   .banner {
     width: 40%;
     height: 100%;
+    border-radius: 15px 0px 0px 15px;
+  }
+
+  .container-login {
+    border-radius: 15px 0px 0px 15px;
   }
 
   .container-login {
@@ -90,6 +111,49 @@ p {
   color: var(--color1);
 }
 
-.container-content-create h1,p {
+.container-content-create h1,
+p {
   color: black;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.entrarAnimacao {
+  animation: 1s steps(120) fade-in forwards;
+}
+
+.sairAnimacao {
+  animation: 0.3s steps(120) fade-out forwards;
 }
