@@ -3,7 +3,8 @@
 :root {
   --font: "Open Sans", sans-serif;
   --fontTitle: "Grand Hotel", cursive;
-  --color1: #8c2519;
+  --color0: #003A6B;
+  --color1: #43d9c0;
   --color2: #2b3856;
   --color3: #ededed;
 }
@@ -57,7 +58,7 @@ p {
   color: var(--color2);
 }
 @media (min-width: 1200px) {
-  body{
+  body {
     justify-content: center;
     align-items: center;
   }

@@ -4,14 +4,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {  
-            <?php session_start();?>
-            let nome = document.getElementById('inputName5');
-            let email = document.getElementById('inputEmail5');
-            let senha = document.getElementById('inputPassword5');
-            nome.value = "<?php echo $_SESSION['nome'] ?>";
-            email.value = "<?php echo $_SESSION['email'] ?>";
-            senha.value = "<?php echo $_SESSION['senha'] ?>";
+            <?php session_start();
+
+              if(isset($_SESSION['nome']) || isset($_SESSION['email']) || isset($_SESSION['senha'])){?>
+              
+              let nome = document.getElementById('inputName5');
+              let email = document.getElementById('inputEmail5');
+              let senha = document.getElementById('inputPassword5');
+              nome.value = "<?php echo $_SESSION['nome'] ?>";
+              email.value = "<?php echo $_SESSION['email'] ?>";
+              senha.value = "<?php echo $_SESSION['senha'] ?>";
             
+            <?php } ?>
         });
     </script> 
 
@@ -64,13 +68,13 @@
 
       <label for="inputName5" class="form-label my-1 lbc">Nome</label>
       <input type="name" name="nome" id="inputName5" class="form-control ci <?php if($this->view->erroCadastro){?> border border-danger <?php  } ?>" 
-      aria-describedby="NameHelpBlock">
+      aria-describedby="NameHelpBlock" required>
       
       <label for="inputEmail5" class="form-label my-1 lbc">Email</label>
-      <input type="email" name="email" id="inputEmail5" class="form-control ci <?php if($this->view->erroCadastro){?> border border-danger <?php  } ?>" aria-describedby="emailHelpBlock">
+      <input type="email" name="email" id="inputEmail5" class="form-control ci <?php if($this->view->erroCadastro){?> border border-danger <?php  } ?>" aria-describedby="emailHelpBlock" required>
       
       <label for="inputPassword5" class="form-label my-1 lbc">Senha</label>
-      <input type="password" name="senha" id="inputPassword5" class="form-control mb-2 ci <?php if($this->view->erroCadastro){?> border border-danger <?php  } ?>" aria-describedby="passwordHelpBlock">
+      <input type="password" name="senha" id="inputPassword5" class="form-control mb-2 ci <?php if($this->view->erroCadastro){?> border border-danger <?php  } ?>" aria-describedby="passwordHelpBlock" required minlength=1 maxlength=20>
 
       <button class="btn btn-create fw-bold btnc">Cadastre-se</button>
       <?php if($this->view->erroCadastro){ ?>
