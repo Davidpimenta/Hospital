@@ -3,9 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="css/home.css">
+  <title></title>
 </head>
 <body>
-  
+  <main class="w-100">
+    <section class="d-flex flex-md-row w-100 newSaborContainer flex-column">
+
+      <div class="infiniteSaborTextContainer d-flex justify-content-center align-items-center flex-column py-3">
+        
+        <div class="container container-xl container-content-card px-3 px-xl-0">
+          <div class="title-card"><h1 class="text-center">Junte sabores infinitos!</h1></div>
+          <p class="text-card fw-bold my-3 text-center">Vindo presencialmente na loja Frosty Delights você pode escolher a quantidade de sabores que quiser com uma mega promoção!</p>
+          <form action="/home/infiniteSabor" class="d-flex justify-content-center">
+            <button class="btn infiniteBtn fw-bold">Ler mais</button>
+          </form>
+        </div>
+      
+      </div>
+
+      <div class="infiniteSaborImgContainer">
+        <img src="images/infiniteSabor.jpg" alt="" class="infiniteSaborImg">
+      </div>
+    </section>
+
+    <section class="ondeComprarSection w-100 py-4 d-flex justify-content-center">
+      <div class="container-xl container container-ondeComprar px-2 mx-xl-5 mx-0">
+        <div class="title-card"><h1>Onde Comprar</h1></div>
+        <div class="containerCards w-100 d-flex flex-xl-row flex-column gap-5 mt-4">
+          <div class="carde"> 
+            <div class="w-100 divImgCarde"><a href=""><img src="images/entregaSabor.jpg" alt="" class="w-100 rounded"></a></div>
+            <div class="title-img"><h2 class="fs-3 mt-4">Pegue seu sorvete!</h2></div>
+            <div class="content-img">
+              <p class="fs-6 fw-medium">Peça seu sorvete para ser entregue em sua residência</p>
+            </div>
+            <form action="" class="d-flex d-xl-block justify-content-center">
+              <button class="btn btn-img rounded-pill fw-bold">Pegue seu sorvete</button>
+            </form>
+          </div>
+
+          <div class="carde">
+            <div class="w-100 divImgCarde"><a href=""><img src="images/lojaSabor.jpg" alt="" class="w-100 rounded"></a></div>
+            <div class="title-img">
+              <h2 class="fs-3 mt-4">Encontre uma loja perto de você!</h2>
+            </div>
+            <div class="content-img">
+                <p class="fs-6 fw-medium">Acharemos uma loja pertinho de você.</p>
+            </div>
+            <form action="" class="d-flex d-xl-block justify-content-center">
+              <button class="btn btn-img rounded-pill fw-bold">Encontre uma loja perto de você!</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="topPopularesSection w-100 py-4 d-flex justify-content-center">
+    <div class="container-xl container container-topPopulares px-2 mx-xl-5 mx-0">
+        <div class="title-card"><h1>Nossos sabores mais populares!</h1></div>
+        <div class="containerCards w-100 d-flex flex-xl-row flex-column gap-4 mt-4">
+
+          <div class="carde rounded position-relative pb-4"> 
+
+            <div class="w-100 divImgCarde">
+              <a href=""><img src="images/TripleTreatDelight.jpg" alt="" class="w-100 rounded-top"></a>
+            </div>
+            
+            <div class="title-img ps-2"><h2 class="fs-3 mt-3">Triple Treat Delight</h2></div>
+            <div class="content-img px-2 pb-md-4 pb-5">
+              <p class="fs-6 fw-medium">Uma experiência tripla de deleite com três camadas de sabores incríveis, uma combinação perfeita para os amantes de sobremesas.</p>
+            </div>
+            
+            <form action="" class="w-100 d-flex d-xl-block justify-content-center ps-2 position-absolute bottom-0 start-0">
+              <button class="btn btn-img rounded-pill fw-bold">Fazer seu pedido</button>
+            </form>
+
+          </div>
+
+          <div class="carde rounded position-relative pb-4">
+            <div class="w-100 divImgCarde"><a href=""><img src="images/ChocoVanillaBliss.jpg" alt="" class="w-100 rounded-top"></a></div>
+            <div class="title-img ps-2">
+              <h2 class="fs-3 mt-3">ChocoVanilla Bliss</h2>
+            </div>
+            <div class="content-img px-2 pb-md-4 pb-5">
+                <p class="fs-6 fw-medium">Um paraíso de indulgência com a combinação perfeita de chocolate e baunilha, oferecendo uma experiência celestial de sabor em cada colherada.</p>
+            </div>
+            <form action="" class="w-100 d-flex d-xl-block justify-content-center ps-2 position-absolute bottom-0 start-0">
+              <button class="btn btn-img rounded-pill fw-bold">Fazer seu pedido</button>
+            </form>
+          </div>
+
+          <div class="carde rounded position-relative pb-4"> 
+            <div class="w-100 divImgCarde"><a href=""><img src="images/ChocoChantBrownieDelight.jpg" alt="" class="w-100 rounded-top"></a></div>
+            <div class="title-img ps-2"><h2 class="fs-3 mt-3">ChocoChant Brownie Delight</h2></div>
+            <div class="content-img px-2 pb-md-4 pb-5">
+              <p class="fs-6 fw-medium">uma tentação de brownie de chocolate com chantilly cremoso. O doce perfeito para os momentos especiais.</p>
+            </div>
+            <form action="" class="w-100 d-flex d-xl-block justify-content-center ps-2 position-absolute bottom-0 start-0">
+              <button class="btn btn-img rounded-pill fw-bold">Fazer seu pedido</button>
+            </form>
+          </div>
+
+          <div class="carde rounded position-relative pb-4"> 
+            <div class="w-100 divImgCarde"><a href=""><img src="images/StrawberryDreamFloat.jpg" alt="" class="w-100 rounded-top"></a></div>
+            <div class="title-img ps-2"><h2 class="fs-3 mt-3">Strawberry Dream Float</h2></div>
+            <div class="content-img px-2 pb-md-4 pb-5">
+              <p class="fs-6 fw-medium">Strawberry Dream Float sorvete de morango e chantilly fresco. Uma explosão de sabor em cada gole.</p>
+            </div>
+            <form action="" class="w-100 d-flex d-xl-block justify-content-center ps-2 position-absolute bottom-0 start-0">
+              <button class="btn btn-img rounded-pill fw-bold">Fazer seu pedido</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="d-flex flex-md-row m-auto py-xl-4 py-0 verMaisSaboresSection flex-column">
+
+      <div class="container-maisSorvetes-img">
+        <img src="images/ChocoCookieChantillyCup.jpg" alt="maisSaboresImg" class="maisSaboresImg">
+      </div>
+
+      <div class="container-maisSorvetesAll d-flex justify-content-center align-items-center flex-column pt-4 p-xl-0">
+        
+        <div class="container container-xl container-maisSorvetes px-3 px-xl-0">
+          <div class="title-card"><h1 class="text-center">Junte sabores infinitos!</h1></div>
+          <p class="text-card fw-bold my-3 text-center">Vindo presencialmente na loja Frosty Delights você pode escolher a quantidade de sabores que quiser com uma mega promoção!</p>
+          <form action="/home/infiniteSabor" class="d-flex justify-content-center">
+            <button class="btn infiniteBtn fw-bold">Ler mais</button>
+          </form>
+        </div>
+      
+      </div>
+    </section>
+
+  </main>
+  <script src="/script/home.js"></script>
 </body>
 </html>

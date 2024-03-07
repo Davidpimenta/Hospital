@@ -2,11 +2,11 @@
 
 :root {
   --font: "Open Sans", sans-serif;
-  --fontTitle: "Grand Hotel", cursive;
-  --color0: #003A6B;
-  --color1: #43d9c0;
-  --color2: #2b3856;
-  --color3: #ededed;
+  --fontTitle: "Lobster", sans-serif;
+  --color0: #ffc2c7;
+  --color1: #8fdde7;
+  --color2: #98042d;
+  --color3: #ffff;
 }
 
 body {
@@ -158,3 +158,4 @@ p {
 .sairAnimacao {
   animation: 0.3s steps(120) fade-out forwards;
 }
+

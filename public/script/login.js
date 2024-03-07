@@ -45,7 +45,7 @@ function runReverseAnimations() {
     }
 
     let p = document.querySelector(".banner-p");
-    p.innerHTML = "Faça login e venha ser tratado pelos melhores do país!";
+    p.innerHTML = "Faça login e venha experimentar os melhores sorvetes do país";
     let title = document.querySelector(".container-login-title");
     title.classList.remove("entrarAnimacao");
     title.classList.add("sairAnimacao");
@@ -116,7 +116,7 @@ function runAnimations() {
     }
     
     let p = document.querySelector('.banner-p');
-    p.innerHTML = "Faça seu cadastro e venha ser tratado pelos melhores do país!";
+    p.innerHTML = "Faça seu cadastro e venha ser experimentar os melhores sorvetes do país!";
     let title = document.querySelector(".container-create-title");
     title.classList.remove("entrarAnimacao");
     title.classList.add("sairAnimacao");

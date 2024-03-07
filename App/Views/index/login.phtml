@@ -25,19 +25,20 @@
 
   <script>
         document.addEventListener('DOMContentLoaded', function() {  
-            <?php session_start();?>
-            let email = document.getElementById('inputEmail2');
-            let senha = document.getElementById('inputPassword2');
-            email.value = "<?php echo $_SESSION['email'] ?>";
-            senha.value = "<?php echo $_SESSION['senha'] ?>";
-
-
-            let btn_banner = document.querySelector('.btn-banner');
-            if (btn_banner) {
-                btn_banner.click();
-            }
+            <?php session_start();
             
-        });
+            if(isset($_SESSION['email']) || isset($_SESSION['senha'])){?>
+              let email = document.getElementById('inputEmail2');
+              let senha = document.getElementById('inputPassword2');
+              email.value = "<?php echo $_SESSION['email'] ?>";
+              senha.value = "<?php echo $_SESSION['senha'] ?>";
+            <?php } ?>
+            
+              let btn_banner = document.querySelector('.btn-banner');
+              if (btn_banner) {
+                  btn_banner.click();
+              }
+            });
     </script> 
    
    <?php $this->view->erroLogin = true;
@@ -50,11 +51,11 @@
 
 <script src="/script/login.js"></script>
 <body class="d-flex flex-column">
-<main class="container-xl p-0 d-flex flex-xl-row flex-column">
+<main class="p-0 d-flex flex-xl-row flex-column">
   <section class="py-4 banner d-flex justify-content-center align-items-center">
     <div class="container-content-banner container-fluid w-75">
       <div class="container-banner-title d-flex justify-content-center"><h1 class="fs-4">Bem vindo!</h1></div>
-      <div class="container-banner-text d-flex justify-content-center"><p class="text-center fs-6 banner-p">Faça login e venha ser tratado pelos melhores do país!</p></div>
+      <div class="container-banner-text d-flex justify-content-center"><p class="text-center fs-6 banner-p">Faça login e venha experimentar os melhores sorvetes do país!</p></div>
       <div class="container-banner-button d-flex justify-content-center"><button target="button" class="btn-banner btn px-3 py-2 fs-6 fw-bold" onclick="login(event)" >Login</button></div>
     </div>
   </section>
@@ -62,7 +63,7 @@
     <div class="container-content-create container-fluid w-75 justify-content-center align-items-center"> 
     <div class="container-create-title"><h2 class="fs-4 text-center fw-bold">Criar conta</h2></div>
       <div class="container-create-text">
-        <p class="fs-6">Crie a sua conta e venha ser tratado pelos melhores do país!</p>
+        <p class="fs-6 text-center">Crie a sua conta e venha desfrutar dessas maravilhas!</p>
       </div>
       <form action="/registrar" method="post" class="d-flex gap-1 flex-column">
 
@@ -87,7 +88,7 @@
 
     <div class="d-none container-content-login container-fluid d-flex justify-content-center align-items-center w-75 flex-column">
     <div class="container-login-title entrarAnimacao"><h2 class="fs-4 text-center fw-bold">Fazer Login</h2></div>
-      <div class="container-login-text entrarAnimacao"><p class="fs-6">Seja bem vindo de volta aos melhores do país!</p></div>
+      <div class="container-login-text entrarAnimacao"><p class="fs-6">Seja bem vindo de volta!</p></div>
       
       <form action="/autenticar" method="post" class="d-flex gap-1 flex-column w-100">
 

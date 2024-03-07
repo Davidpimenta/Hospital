@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+:root {
+  --font: "Open Sans", sans-serif;
+  --fontTitle: "Lobster", sans-serif;
+  --color0: #ffc2c7;
+  --color1: #8fdde7;
+  --color2: #98042d;
+  --color3: #ffff;
+}
+
+main {
+  padding-top: 100px !important;
+}
+
+.infiniteSaborTextContainer {
+  width: 100%;
+  background-color: var(--color2);
+}
+
+.infiniteSaborImgContainer {
+  width: 100%;
+}
+
+.infiniteSaborImg {
+  width: 100%;
+}
+
+.title-card h1 {
+  color: var(--color1);
+  font-family: var(--fontTitle);
+}
+
+.text-card {
+  color: white;
+}
+
+.container-content-card {
+  width: 100%;
+}
+
+.infiniteBtn {
+  color: var(--color1);
+  border: 1px solid var(--color1);
+}
+
+.infiniteBtn:hover {
+  background-color: var(--color1);
+  color: var(--color2);
+}
+
+.infinitebtn:active {
+  background-color: var(--color1) !important;
+  color: var(--color2) !important;
+  box-shadow: 0px 0px 3px 4px #8fdde7a7;
+  transform: scale(1.2);
+}
+
+.container-ondeComprar .title-card h1 {
+  color: black;
+  text-align: center;
+}
+
+.carde {
+  width: 100%;
+}
+
+.title-img h2 {
+  font-family: var(--fontTitle);
+  text-align: center;
+}
+
+.content-img p {
+  text-align: center;
+}
+
+.btn-img {
+  color: var(--color2);
+  background-color: var(--color1);
+}
+
+.btn-img:hover {
+  color: var(--color1);
+  background-color: var(--color2);
+}
+
+.container-topPopulares .title-card h1 {
+  color: var(--color2);
+  text-align: center;
+}
+
+.topPopularesSection {
+  background-color: var(--color1);
+}
+
+.topPopularesSection .carde {
+  background-color: var(--color3);
+}
+
+.verMaisSaboresSection {
+  width: 100%;
+}
+
+.container-maisSorvetes .title-card h1 {
+  color: black;
+  text-align: center;
+}
+
+.container-maisSorvetes-img {
+  width: 100%;
+}
+
+.container-maisSorvetes {
+  width: 75%;
+}
+
+.container-maisSorvetesAll {
+  width: 100%;
+  background-color: var(--color2);
+}
+
+.maisSaboresImg {
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .infiniteSaborTextContainer {
+    width: 100%;
+  }
+
+  .infiniteSaborImgContainer {
+    width: 100%;
+  }
+
+  .container-content-card {
+    width: 75%;
+  }
+
+  .container-ondeComprar .title-card h1 {
+    text-align: start;
+  }
+
+  .container-topPopulares .title-card h1 {
+    text-align: start;
+  }
+
+  .container-maisSorvetes .title-card h1 {
+    text-align: start;
+  }
+
+  .carde {
+    width: 50%;
+  }
+
+  .title-img h2 {
+    font-family: var(--fontTitle);
+    text-align: start;
+  }
+
+  .content-img p {
+    color: gray;
+    text-align: start;
+  }
+
+  .verMaisSaboresSection {
+    width: 75%;
+  }
+
+  .container-maisSorvetesAll,
+  .container-maisSorvetes-img {
+    width: 50%;
+  }
+
+  .maisSaboresImg {
+    width: 100%;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  .container-maisSorvetesAll {
+    border-radius: 0px 5px 5px 0px;
+  }
+}
