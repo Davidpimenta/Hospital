@@ -18,121 +18,30 @@ body {
 }
 nav.navbar {
   background-color: var(--color0) !important;
-  height: 102px;
-  overflow: hidden;
-  transition: 0.5s all;
 }
 
-.closed {
-  overflow: hidden;
-  height: 0px !important;
-  padding-top: 0px;
-  transition: 0.5s all;
-}
-
-.container-top h1 {
+.navbar-brand {
+  color: var(--color3);
   font-family: var(--fontTitle);
-  font-size: 30px !important;
+}
+
+.navbar-brand:hover {
+  color: var(--color3);
+}
+
+.nav-link {
   color: white;
+  font-family: var(--fontTitle);
 }
 
-a.btn {
-  color: white;
-  background-color: var(--color2);
-}
-
-.menu {
-  padding-top: 5px;
-}
-
-.menucontainer {
-  border-bottom: 2px solid var(--color1) !important;
-  z-index: 9999;
-}
-
-.menu div {
-  cursor: pointer;
-  background-color: transparent;
-  color: white !important;
-  transition: 0.2s all;
-}
-
-.menu div.act {
-  background-color: var(--color1);
+.nav-link:hover {
   color: var(--color2) !important;
-  transition: 0.5s all;
 }
 
-.menu span {
-  width: 1px;
-  height: 22px;
-  background-color: var(--color1) !important;
+.navbar-collapse {
+  justify-content: end;
 }
 
-.opt {
-  color: white !important;
-}
-
-@media (min-width: 1200px) {
-  .responsive-font {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 1199.98px) {
-  .responsive-font {
-    font-size: 12px;
-  }
-}
-
-.sobre {
-  background-color: var(--color1) !important;
-  border: 2px solid var(--color1);
-}
-
-.sobre:hover {
-  color: var(--color1) !important;
-  background-color: transparent !important;
-  border: 1px solid var(--color1) !important;
-}
-
-.container-top {
-  position: relative;
-}
-
-.containersobre {
-  width: 120px;
-  position: absolute;
-  left: 100%;
-  transform: translate(-100%, 0%);
-}
-
-.container-dst {
-  height: 0px;
-  overflow: hidden;
-  transition: 1s all;
-}
-
-.container-act {
-  height: 220px;
-  overflow: hidden;
-  transition: 1s all;
-}
-
-.tb_all {
-  display: none;
-  flex-direction: row;
-  height: 0px;
-  overflow: hidden;
-}
-
-.div-opt-act {
-  display: flex;
-  height: 100%;
-  flex-direction: row;
-  transition: 1s all;
-}
-
-.title-header-opt {
-  border-bottom: 2px solid var(--color1);
+.navbar-collapse p {
+  color: white;
 }

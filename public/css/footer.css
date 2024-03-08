@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+:root {
+  --font: "Open Sans", sans-serif;
+  --fontTitle: "Lobster", sans-serif;
+  --color0: #ffc2c7;
+  --color1: #8fdde7;
+  --color2: #98042d;
+  --color3: #ffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  background-color: var(--color2);
+}
+
+footer h3 {
+  font-family: var(--fontTitle);
+  color: var(--color3);
+  text-align: center;
+}
+
+footer p {
+  font-family: var(--fontTitle);
+  color: var(--color3);
+  text-align: center;
+}
+
+.footer-redesSociais {
+  justify-content: center;
+}
+
+@media (min-width: 1200px) {
+  footer h3 {
+    text-align: start;
+  }
+
+  footer p {
+    text-align: start;
+  }
+
+  .footer-redesSociais {
+    justify-content: start;
+  }
+}

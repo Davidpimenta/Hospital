@@ -9,10 +9,6 @@
   --color3: #ffff;
 }
 
-main {
-  padding-top: 100px !important;
-}
-
 .infiniteSaborTextContainer {
   width: 100%;
   background-color: var(--color2);
@@ -65,6 +61,20 @@ main {
   width: 100%;
 }
 
+.divImgCarde {
+  overflow: hidden;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.divImgCarde img {
+  transition: 0.5s;
+}
+
+.divImgCarde img:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
 .title-img h2 {
   font-family: var(--fontTitle);
   text-align: center;
@@ -97,30 +107,82 @@ main {
   background-color: var(--color3);
 }
 
-.verMaisSaboresSection {
+.verSobreSection {
+  width: 100%;
+  background-color: var(--color0);
+}
+
+.container-sobre {
   width: 100%;
 }
 
-.container-maisSorvetes .title-card h1 {
-  color: black;
+.container-sobre .title-card h1 {
+  color: var(--color2);
   text-align: center;
 }
 
-.container-maisSorvetes-img {
+.container-sobreAll {
   width: 100%;
 }
 
-.container-maisSorvetes {
-  width: 75%;
+.container-sobre p {
+  color: gray;
+  text-align: center;
 }
 
-.container-maisSorvetesAll {
-  width: 100%;
+.btn-sobre {
+  border: 1px solid var(--color2);
+  color: var(--color2);
+}
+
+.btn-sobre:hover {
   background-color: var(--color2);
+  color: var(--color3);
 }
 
-.maisSaboresImg {
+.container-imagensAll {
   width: 100%;
+  padding: 0% 5%;
+  justify-content: end;
+}
+
+.container-imagem {
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  transition: 0.2s all;
+}
+
+#container-imagem1 {
+  z-index: 3;
+}
+
+#container-imagem2 {
+  margin-left: -10%;
+  z-index: 2;
+}
+
+#container-imagem3 {
+  margin-left: -10%;
+  z-index: 1;
+}
+
+.sobreImg {
+  width: 100%;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.container-imagem:hover {
+  z-index: 4 !important;
+}
+.sobreImg:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 @media (min-width: 1200px) {
@@ -144,7 +206,7 @@ main {
     text-align: start;
   }
 
-  .container-maisSorvetes .title-card h1 {
+  .container-sobre .title-card h1 {
     text-align: start;
   }
 
@@ -162,21 +224,23 @@ main {
     text-align: start;
   }
 
-  .verMaisSaboresSection {
-    width: 75%;
+  .verSobreSection {
+    padding: 5% 3%;
   }
 
-  .container-maisSorvetesAll,
-  .container-maisSorvetes-img {
+  .container-sobreAll {
+    border-radius: 0px 5px 5px 0px;
+  }
+
+  .container-sobre {
     width: 50%;
   }
 
-  .maisSaboresImg {
-    width: 100%;
-    border-radius: 5px 0px 0px 5px;
+  .container-sobre p {
+    text-align: start;
   }
 
-  .container-maisSorvetesAll {
-    border-radius: 0px 5px 5px 0px;
+  .container-imagensAll {
+    width: 50%;
   }
 }
