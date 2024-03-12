@@ -38,6 +38,12 @@ class Route extends Bootstrap {
 			'action' => 'sair'
 		);
 
+		$routes['requests'] = array(
+			'route' => '/home/requests',
+			'controller' => 'AppController',
+			'action' => 'abrirRequests'
+		);
+		
 
 		$this->setRoutes($routes);
 	}

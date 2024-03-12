@@ -24,6 +24,12 @@ class AppController extends Action {
 		}
 	}
 
+	public function abrirRequests(){
+		$this->validaAutenticacao();
+
+		$this->render('requests', 'layout1');
+	}
+
 }
 
 

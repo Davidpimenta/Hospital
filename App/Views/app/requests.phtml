@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/requests.css">
+  <link rel="stylesheet" href="../css/top.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <title>Requests</title>
+</head>
+<body>
+  
+  <main class="w-100">
+    <section class="navPedidos">
+      <div class="card text-center">
+        <div class="card-header px-5">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active navPedidosOpt" aria-current="true" onclick="navOpt(event)">Pedidos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navPedidosOpt" onclick="navOpt(event)">Cancelados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navPedidosOpt" onclick="navOpt(event)">Comprar Novamente</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+
+          <section class="navOpt sectionPedidos act">
+            Pedidos
+          </section>
+
+          <section class="navOpt sectionCancelados dst">
+            Cancelados
+          </section>
+
+          <section class="navOpt sectionComprarNovamente dst">
+            Comprar Novamente
+          </section>
+
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script src="../script/requests.js"></script>
+</body>
+</html>
