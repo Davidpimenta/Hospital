@@ -24,7 +24,13 @@ class AppController extends Action {
 		}
 	}
 
-	public function abrirRequests(){
+	public function abrirOrderHistory(){
+		$this->validaAutenticacao();
+
+		$this->render('orderhistory', 'layout1');
+	}
+
+	public function abriRequests(){
 		$this->validaAutenticacao();
 
 		$this->render('requests', 'layout1');

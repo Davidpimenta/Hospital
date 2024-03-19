@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+:root {
+  --font: "Open Sans", sans-serif;
+  --fontTitle: "Lobster", sans-serif;
+  --color0: #ffc2c7;
+  --color1: #8fdde7;
+  --color2: #98042d;
+  --color3: #ffff;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: var(--font);
+}
+
+.card-header {
+  background-color: var(--color1);
+}
+
+.card-header .active {
+  color: var(--color2) !important;
+}
+
+.dst {
+  display: none;
+}
+.navPedidosOpt {
+  cursor: pointer;
+}

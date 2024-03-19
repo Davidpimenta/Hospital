@@ -1,24 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {});
+const imgsCard = document.querySelectorAll(".imgHidden");
 
-function navOpt(event) {
-  const opts = document.querySelectorAll(".navOpt");
-  const btns = document.querySelectorAll(".navPedidosOpt");
+imgsCard.forEach((img) => {
+  img.addEventListener("mouseenter", (event) => {
+    const cards = document.querySelectorAll(".card");
 
-  console.log(event.target.textContent.split(" ")[0]);
-
-  opts.forEach((opt) => {
-    if (opt.classList.contains("act")) {
-      opt.classList.remove("act");
-      opt.classList.add('dst');
-    }
-
-    if (opt.classList.value.includes(event.target.textContent.split(" ")[0])) {
-      opt.classList.remove("dst");
-      opt.classList.add("act");
-    }
-
-    if (!opt.classList.contains("act") && !opt.classList.contains("act")) {
-      opt.classList.add("dst");
-    }
+    cards.forEach((card) => {
+      if (event.target == card.querySelector(".imgHidden")) {
+        const cardBody = card.querySelector(".card-body");
+        cardBody.style.paddingTop = `${img.clientHeight - 170}px`;
+      }
+    });
   });
-}
+
+  img.addEventListener("mouseleave", (event) => {
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach((card) => {
+      if (event.target == card.querySelector(".imgHidden")) {
+        const cardBody = card.querySelector(".card-body");
+        cardBody.style.paddingTop = `${16}px`;
+      }
+    });
+  });
+});

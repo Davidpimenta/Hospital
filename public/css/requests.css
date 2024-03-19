@@ -15,14 +15,61 @@
   font-family: var(--font);
 }
 
-.card-header {
+body {
+  background-color: var(--color3) !important;
+}
+
+.sectionPedidosRequest {
   background-color: var(--color1);
 }
 
-.card-header .active {
-  color: var(--color2) !important;
+.container-title h1 {
+  color: var(--color2);
 }
 
-.dst {
-  display: none;
+.textTitle {
+  font-family: var(--fontTitle);
+}
+
+.card {
+  width: 100%;
+  border-color: var(--color2);
+}
+
+.card-title {
+  color: var(--color2);
+}
+
+.btn-addCar {
+  border-color: var(--color2);
+  color: var(--color2);
+}
+
+.btn-addCar:hover {
+  background-color: var(--color2);
+  color: var(--color0);
+}
+
+.over .imgHidden {
+  position: relative;
+  z-index: 9999;
+}
+
+.container-img {
+  overflow: hidden;
+  max-height: 190px;
+}
+
+.over:hover {
+  overflow: visible;
+}
+
+.container-img:hover body {
+  color: var(--color2);
+}
+
+@media (min-width: 1200px) {
+  .card {
+    width: 18rem;
+  }
 }

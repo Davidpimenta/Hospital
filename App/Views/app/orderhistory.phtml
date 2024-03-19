@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/orderHistory.css">
+  <link rel="stylesheet" href="../css/top.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <title>Order History</title>
+</head>
+<body>
+  
+  <main class="w-100">
+    <section class="navPedidos">
+      <div class="card text-center">
+        <div class="card-header px-md-5 px-3">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link  navPedidosOpt active" onclick="navOpt(event)">Pedidos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navPedidosOpt" onclick="navOpt(event)">Cancelados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navPedidosOpt" onclick="navOpt(event)">Comprar Novamente</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+
+          <section class="navOpt sectionPedidos act">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <div class="card">
+                  <img src="../images/ChocoCookieChantillyCup.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="navOpt sectionCancelados dst">
+            Cancelados
+          </section>
+
+          <section class="navOpt sectionComprarNovamente dst">
+            Comprar Novamente
+          </section>
+
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script src="../script/orderHistory.js"></script>
+</body>
+</html>

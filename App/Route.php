@@ -38,10 +38,16 @@ class Route extends Bootstrap {
 			'action' => 'sair'
 		);
 
-		$routes['requests'] = array(
-			'route' => '/home/requests',
+		$routes['abrirOrderHistory'] = array(
+			'route' => '/OrderHistory',
 			'controller' => 'AppController',
-			'action' => 'abrirRequests'
+			'action' => 'abrirOrderHistory'
+		);
+
+		$routes['requests'] = array(
+			'route' => '/requests',
+			'controller' => 'AppController',
+			'action' => 'abriRequests'
 		);
 		
 
