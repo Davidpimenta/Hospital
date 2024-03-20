@@ -38,6 +38,8 @@ footer p {
   justify-content: center;
 }
 
+
+
 @media (min-width: 1200px) {
   footer h3 {
     text-align: start;

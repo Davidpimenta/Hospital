@@ -45,6 +45,11 @@ body {
   color: var(--color2);
 }
 
+.btn-addCar:active {
+  background-color: var(--color2) !important;
+  color: var(--color0) !important;
+}
+
 .btn-addCar:hover {
   background-color: var(--color2);
   color: var(--color0);
@@ -66,6 +71,67 @@ body {
 
 .container-img:hover body {
   color: var(--color2);
+}
+
+.carrinhoBtn {
+  position: fixed;
+  top: 50vh;
+  left: 87vw;
+  z-index: 999999;
+}
+
+.carrinhoBtn {
+  background-color: var(--color2);
+  border-color: var(--color0);
+  color: var(--color0);
+}
+
+.carrinhoBtn:active {
+  background-color: var(--color0) !important;
+  color: var(--color2) !important;
+}
+
+.carrinhoBtn:hover {
+  background-color: var(--color3);
+  border-color: var(--color0);
+  color: var(--color2);
+}
+
+.canvasCar {
+  background-color: var(--color0);
+  z-index: 9999;
+}
+
+h5.offcanvas-title {
+  color: var(--color2);
+}
+
+.btnRealizarPedido {
+  background-color: var(--color2);
+  border-color: var(--color2);
+  color: var(--color3);
+  position: fixed;
+  top: 100%;
+  transform: translate(0%, -130%);
+}
+
+.btnRealizarPedido:hover {
+  background-color: var(--color1);
+  border-color: var(--color1);
+  color: var(--color2);
+}
+
+.carrinhoLi {
+  list-style: none;
+}
+
+.carrinhoP {
+  color: var(--color2);
+}
+
+.btnRemoveCar {
+  color: red;
+  cursor: pointer;
 }
 
 @media (min-width: 1200px) {
