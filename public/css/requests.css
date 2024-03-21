@@ -65,6 +65,10 @@ body {
   max-height: 190px;
 }
 
+.card-body {
+  transition: 0.2s;
+}
+
 .over:hover {
   overflow: visible;
 }
@@ -74,16 +78,19 @@ body {
 }
 
 .carrinhoBtn {
-  position: fixed;
-  top: 50vh;
-  left: 87vw;
-  z-index: 999999;
-}
-
-.carrinhoBtn {
   background-color: var(--color2);
   border-color: var(--color0);
   color: var(--color0);
+  position: fixed;
+  top: 80vh;
+  left: 100vw;
+  transform: translate(-110%);
+  white-space: nowrap;
+  z-index: 9999;
+}
+
+.offcanvas {
+  z-index: 99999;
 }
 
 .carrinhoBtn:active {
@@ -106,19 +113,49 @@ h5.offcanvas-title {
   color: var(--color2);
 }
 
+.btn-offcanva {
+  position: fixed;
+  top: 100%;
+  transform: translate(0%, -130%);
+}
+
 .btnRealizarPedido {
   background-color: var(--color2);
   border-color: var(--color2);
   color: var(--color3);
-  position: fixed;
-  top: 100%;
-  transform: translate(0%, -130%);
 }
 
 .btnRealizarPedido:hover {
   background-color: var(--color1);
   border-color: var(--color1);
   color: var(--color2);
+}
+
+.btn-removerTudo {
+  background-color: var(--color1);
+  border-color: var(--color1);
+  color: var(--color2);
+  left: 78%;
+  transform: translate(-50%, -130%);
+  white-space: nowrap;
+}
+
+.btn-removerTudo:hover {
+  background-color: var(--color2);
+  border-color: var(--color2);
+  color: var(--color1);
+}
+
+.btnRealizarPedido:active {
+  background-color: var(--color2) !important;
+  border-color: var(--color2) !important;
+  color: var(--color3) !important;
+}
+
+.btn-removerTudo:active {
+  background-color: var(--color1) !important;
+  border-color: var(--color1) !important;
+  color: var(--color2) !important;
 }
 
 .carrinhoLi {
@@ -129,13 +166,22 @@ h5.offcanvas-title {
   color: var(--color2);
 }
 
-.btnRemoveCar {
-  color: red;
+.btnRemovePedido {
+  color: red !important;
   cursor: pointer;
 }
 
 @media (min-width: 1200px) {
   .card {
     width: 18rem;
+  }
+
+  .carrinhoBtn {
+    top: 50vh;
+    left: 98vw;
+  }
+
+  .btn-removerTudo {
+    left: 300px;
   }
 }

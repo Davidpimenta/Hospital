@@ -6,6 +6,11 @@
   <link rel="stylesheet" href="../css/requests.css">
   <link rel="stylesheet" href="../css/top.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <style>
+    .class{
+      font-size: 100px;
+    }
+  </style>
   <title>Requests</title>
 </head>
 <body>
@@ -85,7 +90,7 @@
 
           <div class="card align-self-start">
             <div class="over container-img">
-              <img src="../images/ChocoCookieChantillyCup.jpg" class="card-img-top imgHidden" alt="...">
+              <img src="../images/ChocoCookieChantillyCup.jpg" class="card-img-top rounded imgHidden" alt="...">
             </div>
           
             <div class="card-body">
@@ -98,7 +103,7 @@
 
           <div class="card align-self-start">
             <div class="over container-img">
-              <img src="../images/RainbowBlissGelato.jpg" class="card-img-top imgHidden" alt="...">
+              <img src="../images/RainbowBlissGelato.jpg" class="card-img-top rounded imgHidden" alt="...">
             </div>
           
             <div class="card-body">
@@ -124,7 +129,7 @@
 
           <div class="card align-self-start">
             <div class="over container-img">
-              <img src="../images/Casquinha.jpg" class="card-img-top imgHidden" alt="...">
+              <img src="../images/Casquinha.jpg" class="card-img-top rounded imgHidden" alt="...">
             </div>
           
             <div class="card-body">
@@ -161,6 +166,7 @@
   </div>
   <div class="offcanvas-body position-relative">
 
-    <button class="btn btnRealizarPedido" onclick="carrinho.fazerPedido()">Fazer pedido</button>
+    <button class="btn btn-offcanva btnRealizarPedido" onclick="carrinho.fazerPedido()">Fazer pedido</button>
+    <button class="btn btn-offcanva btn-removerTudo" onclick="carrinho.removerProdutos()">Remover tudo</button>
   </div>
 </div>

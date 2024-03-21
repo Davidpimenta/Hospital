@@ -7,7 +7,15 @@ imgsCard.forEach((img) => {
     cards.forEach((card) => {
       if (event.target == card.querySelector(".imgHidden")) {
         const cardBody = card.querySelector(".card-body");
-        cardBody.style.paddingTop = `${img.clientHeight - 170}px`;
+
+        // Calcula a diferença entre a altura da imagem e a altura desejada do card-body
+        const heightDiff = img.clientHeight - 170;
+
+        // Adiciona a classe 'marginTopCardBody' ao card-body
+        cardBody.style.paddingTop = heightDiff + "px";
+
+        // Adiciona uma transição suave à mudança
+        cardBody.style.transition = "padding-top 0.5s 0.1s ease-in-out";
       }
     });
   });
@@ -18,7 +26,11 @@ imgsCard.forEach((img) => {
     cards.forEach((card) => {
       if (event.target == card.querySelector(".imgHidden")) {
         const cardBody = card.querySelector(".card-body");
-        cardBody.style.paddingTop = `${16}px`;
+        const heightDiff = 16;
+
+        cardBody.style.paddingTop = heightDiff + "px";
+
+        cardBody.style.transition = "padding-top 0.5s ease-in-out";
       }
     });
   });
@@ -27,6 +39,7 @@ imgsCard.forEach((img) => {
 class Carrinho {
   constructor() {
     this.carrinho = [];
+    this.cont = 0;
   }
 
   adicionarProdutos(produto) {
@@ -42,12 +55,16 @@ class Carrinho {
   removerProduto(produto, event) {
     this.mudancaDoCarrinho("apagarD", event);
     this.carrinho.splice(this.carrinho.indexOf(produto), 1);
+    if (this.carrinho.length == 0) {
+      const carrinhoBtn = document.querySelector(".carrinhoBtn");
+      carrinhoBtn.classList.add("d-none");
+    }
   }
 
   removerProdutos() {
     this.mudancaDoCarrinho("apagarT");
     this.carrinho = [];
-    const carrinhoBtn = document.querySelector("carrinhoBtn");
+    const carrinhoBtn = document.querySelector(".carrinhoBtn");
     carrinhoBtn.classList.add("d-none");
   }
 
@@ -82,15 +99,17 @@ class Carrinho {
         let li = document.createElement("li");
         let p = document.createElement("p");
         p.classList.add("carrinhoP");
-        p.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ice-cream-cone"><path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11"/><path d="M17 7A5 5 0 0 0 7 7"/><path d="M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4"/></svg> ${produto} <svg class="btnRemoveCar" onclick="carrinho.removerProduto('${produto}', event)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>`;
+        p.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ice-cream-cone"><path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11"/><path d="M17 7A5 5 0 0 0 7 7"/><path d="M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4"/></svg> ${produto} <button type="button" class="btn-close btnRemovePedido ${this.cont}" onclick="carrinho.removerProduto('${produto}', event)"></button>`;
         li.classList.add("carrinhoLi");
+        p.classList.add(`p${this.cont}`);
+        this.cont++;
         li.appendChild(p);
         uL.appendChild(li);
         break;
 
       case "apagarD":
-
-        let P = event.target.parentNode;
+        let svg = event.target.classList[2];
+        let P = document.querySelector(`.p${svg}`);
         P.remove();
         break;
 
