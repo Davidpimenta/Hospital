@@ -167,8 +167,14 @@ h5.offcanvas-title {
 }
 
 .btnRemovePedido {
+  background-color: transparent;
+  border: none;
   color: red !important;
   cursor: pointer;
+}
+
+.svgCloseBtn {
+  pointer-events: none;
 }
 
 @media (min-width: 1200px) {

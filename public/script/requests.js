@@ -39,7 +39,6 @@ imgsCard.forEach((img) => {
 class Carrinho {
   constructor() {
     this.carrinho = [];
-    this.cont = 0;
   }
 
   adicionarProdutos(produto) {
@@ -48,15 +47,19 @@ class Carrinho {
       carrinhoBtn.classList.remove("d-none");
       this.mudancaDoCarrinho("criarLista", "", produto);
     }
-    this.mudancaDoCarrinho("adicionar", "", produto);
     this.carrinho.push(produto);
+    this.mudancaDoCarrinho("adicionar", "", produto);
   }
 
   removerProduto(produto, event) {
     this.mudancaDoCarrinho("apagarD", event);
     this.carrinho.splice(this.carrinho.indexOf(produto), 1);
+    console.log(this.carrinho);
+    console.log(this.carrinho.length);
     if (this.carrinho.length == 0) {
       const carrinhoBtn = document.querySelector(".carrinhoBtn");
+      const btnClose = document.querySelector(".btn-close");
+      btnClose.click();
       carrinhoBtn.classList.add("d-none");
     }
   }
@@ -65,6 +68,8 @@ class Carrinho {
     this.mudancaDoCarrinho("apagarT");
     this.carrinho = [];
     const carrinhoBtn = document.querySelector(".carrinhoBtn");
+    const btnClose = document.querySelector(".btn-close");
+    btnClose.click();
     carrinhoBtn.classList.add("d-none");
   }
 
@@ -74,11 +79,11 @@ class Carrinho {
     form.setAttribute("action", "/requests");
 
     for (let i = 0; i < this.carrinho.length; i++) {
-      const usernameInput = document.createElement("input");
-      usernameInput.setAttribute("type", "text");
-      usernameInput.setAttribute("name", this.carrinho[i]);
-      usernameInput.setAttribute("value", this.carrinho[i]);
-      form.appendChild(usernameInput);
+      const pedidos = document.createElement("input");
+      pedidos.setAttribute("type", "text");
+      pedidos.setAttribute("name", i);
+      pedidos.setAttribute("value", this.carrinho[i]);
+      form.appendChild(pedidos);
     }
     document.body.appendChild(form);
     form.submit();
@@ -98,25 +103,40 @@ class Carrinho {
         let uL = document.querySelector(".carrinhoUl");
         let li = document.createElement("li");
         let p = document.createElement("p");
+
+        let svgSorvete =
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ice-cream-cone"><path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11"/><path d="M17 7A5 5 0 0 0 7 7"/><path d="M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4"/></svg>';
+
+        let svgFecharButton = `<button class="btnRemovePedido" onclick="retirarPedido(event)"><svg class="svgCloseBtn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg></button>`;
+
         p.classList.add("carrinhoP");
-        p.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ice-cream-cone"><path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11"/><path d="M17 7A5 5 0 0 0 7 7"/><path d="M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4"/></svg> ${produto} <button type="button" class="btn-close btnRemovePedido ${this.cont}" onclick="carrinho.removerProduto('${produto}', event)"></button>`;
+
+        p.innerHTML = `${svgSorvete} ${produto} ${svgFecharButton}`;
         li.classList.add("carrinhoLi");
-        p.classList.add(`p${this.cont}`);
-        this.cont++;
         li.appendChild(p);
         uL.appendChild(li);
+
         break;
 
       case "apagarD":
-        let svg = event.target.classList[2];
-        let P = document.querySelector(`.p${svg}`);
+        let removerBtn = event.target;
+        let P = removerBtn.parentNode;
         P.remove();
         break;
 
       case "apagarT":
+        let btns = document.querySelectorAll(".btnRemovePedido");
+        btns.forEach((btn) => {
+          let P = btn.parentNode;
+          P.remove();
+        });
         break;
     }
   }
+}
+
+function retirarPedido(event) {
+  carrinho.removerProduto(event.target.parentNode.textContent, event);
 }
 
 const carrinho = new Carrinho();
