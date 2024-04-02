@@ -28,6 +28,13 @@ class Usuario extends Model{
     $stmt->bindValue(':senha',$this->__get('senha'));
     $stmt->execute();
 
+    $query = 'select id, email from usuarios where email = :email';
+    $stmt = $this->db->prepare($query);
+    $stmt->bindValue(':email',$this->__get('email'));
+    $stmt->execute();
+    $lista = $stmt->fetchALL();
+    $this->__set('id', $lista[0]['id']); 
+
     return $this;
   }
 
@@ -72,8 +79,14 @@ class Usuario extends Model{
     if($usuario['id'] != '' && $usuario['nome'] != ''){
       $this->__set('id', $usuario['id']);
       $this->__set('nome', $usuario['nome']);
+      
+      $query = 'select id, email from usuarios where email = :email';
+      $stmt = $this->db->prepare($query);
+      $stmt->bindValue(':email',$this->__get('email'));
+      $stmt->execute();
+      $lista = $stmt->fetchALL();
+      $this->__set('id', $lista[0]['id']);
     }
-
     return $this;
   }
 }

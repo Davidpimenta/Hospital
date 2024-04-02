@@ -28,6 +28,7 @@ class IndexController extends Action {
 			session_start();
 
 			$_SESSION['nome'] = $usuario->__get('nome');
+			$_SESSION['id'] = $usuario->__get('id');
 			$_SESSION['email'] = $usuario->__get('email');
 
 			$this->view->erroCadastro = false;

@@ -45,17 +45,22 @@ class Carrinho {
     if (this.carrinho.length == 0) {
       const carrinhoBtn = document.querySelector(".carrinhoBtn");
       carrinhoBtn.classList.remove("d-none");
-      this.mudancaDoCarrinho("criarLista", "", produto);
+      this.mudancaDoCarrinho("criarLista");
     }
+
+    console.log(produto);
     this.carrinho.push(produto);
-    this.mudancaDoCarrinho("adicionar", "", produto);
+    this.mudancaDoCarrinho("adicionar", "", produto[0]);
   }
 
   removerProduto(produto, event) {
     this.mudancaDoCarrinho("apagarD", event);
-    this.carrinho.splice(this.carrinho.indexOf(produto), 1);
-    console.log(this.carrinho);
-    console.log(this.carrinho.length);
+    for (let i = 0; i < this.carrinho.length; i++) {
+      if (this.carrinho[i][0] == produto) {
+        this.carrinho.splice(i, 1);
+      }
+    }
+
     if (this.carrinho.length == 0) {
       const carrinhoBtn = document.querySelector(".carrinhoBtn");
       const btnClose = document.querySelector(".btn-close");
@@ -76,7 +81,7 @@ class Carrinho {
   fazerPedido() {
     const form = document.createElement("form");
     form.setAttribute("method", "POST");
-    form.setAttribute("action", "/requests");
+    form.setAttribute("action", "/request");
 
     for (let i = 0; i < this.carrinho.length; i++) {
       const pedidos = document.createElement("input");

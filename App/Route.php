@@ -49,6 +49,12 @@ class Route extends Bootstrap {
 			'controller' => 'AppController',
 			'action' => 'abriRequests'
 		);
+
+		$routes['request'] = array(
+			'route' => '/request',
+			'controller' => 'AppController',
+			'action' => 'fazerRequest'
+		);
 		
 
 		$this->setRoutes($routes);

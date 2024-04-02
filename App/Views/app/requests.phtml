@@ -1,10 +1,16 @@
 <?php
-  /*if(isset($_POST[1])){
-    echo "<pre>";
-    print_r(array_keys($_POST));
-    echo "</pre>";  
-  }*/
-?>
+  if(isset($_GET['pedidoRealizado'])){?>
+  <div class="w-100 h-100 backgroundS position-fixed">
+    <div class="alert alert-success position-fixed top-50 start-50 translate-middle" role="alert">
+      <h4 class="alert-heading">Pedido Realizado!</h4>
+      <p>Agora é só esperar o seu pedido chegar ai em sua casa.</p>
+      <hr>
+      <p class="mb-0">Clique: <a href="/OrderHistory">Aqui</a> para ver o estado do seu pedido.</p>
+    </div>
+  </div>
+
+  
+<?php } ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,10 +42,10 @@
               <img src="../images/ChocoVanillaBliss.jpg" class="card-img-top" alt="...">
             </div>
             <div class="card-body">
-              <h5 class="card-title textTitle fs-4">Choco Vanilla Bliss</h5>
+              <h5 class="card-title textTitle fs-4">Choco Vanilla Bliss - 5.00R$</h5>
               <p class="card-text">Desfrute de uma explosão de sabor com o Choco Vanilla Bliss, onde a suavidade da baunilha se encontra com a riqueza do chocolate.</p>
               <p class="card-text"><small class="text-body-secondary">Feito em 2 minutos</small></p>
-             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos('ChocoVanillaBliss')">Adicionar na compra</button>
+             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos(['ChocoVanillaBliss', 5.00])">Adicionar na compra</button>
             </div>
           </div>
 
@@ -49,10 +55,10 @@
             </div>
           
             <div class="card-body">
-              <h5 class="card-title textTitle fs-4">Chocolate Cookie Cup</h5>
+              <h5 class="card-title textTitle fs-4">Chocolate Cookie Cup - 12.00R$</h5>
               <p class="card-text">Delicie-se com o Chocolate Cookie Cup, uma combinação irresistível de chocolate e biscoitos crocantes.</p>
               <p class="card-text"><small class="text-body-secondary">Feito em 2 minutos</small></p>
-             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos('ChocolateCookieCup')">Adicionar na compra</button>
+             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos(['ChocolateCookieCup', 12])">Adicionar na compra</button>
             </div>
           </div>
 
@@ -62,10 +68,10 @@
             </div>
           
             <div class="card-body">
-              <h5 class="card-title textTitle fs-4">Choco Chant Brownie Delight</h5>
+              <h5 class="card-title textTitle fs-4">Choco Chant Brownie Delight - 15.00R$</h5>
               <p class="card-text">Deleite-se com o Choco Chant Brownie Delight, uma harmonia perfeita entre brownie e chantilly de chocolate.</p>
               <p class="card-text"><small class="text-body-secondary">Feito em 2 minutos</small></p>
-             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos('ChocoChantBrownieDelight')">Adicionar na compra</button>
+             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos(['ChocoChantBrownieDelight', 15])">Adicionar na compra</button>
             </div>
           </div>
 
@@ -76,10 +82,10 @@
             </div>
           
             <div class="card-body">
-              <h5 class="card-title textTitle fs-4">Strawberry Dream Float</h5>
+              <h5 class="card-title textTitle fs-4">Strawberry Dream Float - 8.00R$</h5>
               <p class="card-text">Surpreenda-se com o Strawberry Dream Float, uma viagem refrescante ao sabor das frutas vermelhas.</p>
               <p class="card-text"><small class="text-body-secondary">Feito em 2 minutos</small></p>
-             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos('StrawberryDreamFloat')">Adicionar na compra</button>
+             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos(['StrawberryDreamFloat', 8])">Adicionar na compra</button>
             </div>
           </div>
 
@@ -89,10 +95,10 @@
             </div>
           
             <div class="card-body">
-              <h5 class="card-title textTitle fs-4">Berry Bliss Gelato Tart</h5>
+              <h5 class="card-title textTitle fs-4">Berry Bliss Gelato Tart - 9.00R$</h5>
               <p class="card-text">Delicie-se com o Berry Bliss Gelato Tart, onde o gelato cremoso encontra o sabor intenso das frutas silvestres.</p>
               <p class="card-text"><small class="text-body-secondary">Feito em 2 minutos</small></p>
-             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos('BerryBlissGelatoTart')">Adicionar na compra</button>
+             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos(['BerryBlissGelatoTart', 9])">Adicionar na compra</button>
             </div>
           </div>
 
@@ -102,10 +108,10 @@
             </div>
           
             <div class="card-body">
-              <h5 class="card-title textTitle fs-4">Choco Cookie Chantilly Cup</h5>
+              <h5 class="card-title textTitle fs-4">Choco Cookie Chantilly Cup - 20.00R$</h5>
               <p class="card-text">Saboreie o Choco Cookie Chantilly Cup, uma indulgência irresistível de chocolate, cookies e chantilly.</p>
               <p class="card-text"><small class="text-body-secondary">Feito em 2 minutos</small></p>
-             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos('ChocoCookieChantillyCup')">Adicionar na compra</button>
+             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos(['ChocoCookieChantillyCup', 20])">Adicionar na compra</button>
             </div>
           </div>
 
@@ -115,10 +121,10 @@
             </div>
           
             <div class="card-body">
-              <h5 class="card-title textTitle fs-4">Rainbow Bliss Gelato</h5>
+              <h5 class="card-title textTitle fs-4">Rainbow Bliss Gelato - 10.00R$</h5>
               <p class="card-text">Deixe-se levar pelo arco-íris de sabores com o Rainbow Bliss Gelato.</p>
               <p class="card-text"><small class="text-body-secondary">Feito em 2 minutos</small></p>
-             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos('RainbowBlissGelato')">Adicionar na compra</button>
+             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos(['RainbowBlissGelato', 10])">Adicionar na compra</button>
             </div>
           </div>
 
@@ -128,10 +134,10 @@
             </div>
           
             <div class="card-body">
-              <h5 class="card-title textTitle fs-4">Triple Treat Delight</h5>
+              <h5 class="card-title textTitle fs-4">Triple Treat Delight - 9.00R$</h5>
               <p class="card-text">Mergulhe na felicidade com o Triple Treat Delight, uma explosão de sabores em cada colherada.</p>
               <p class="card-text"><small class="text-body-secondary">Feito em 2 minutos</small></p>
-             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos('TripleTreatDelight')">Adicionar na compra</button>
+             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos(['TripleTreatDelight', 9])">Adicionar na compra</button>
             </div>
           </div>
 
@@ -141,10 +147,10 @@
             </div>
           
             <div class="card-body">
-              <h5 class="card-title textTitle fs-4">Casquinha</h5>
+              <h5 class="card-title textTitle fs-4">Casquinha - 3.00R$</h5>
               <p class="card-text">Para uma experiência clássica, saboreie uma deliciosa Casquinha, o toque perfeito para momentos doces e especiais.</p>
               <p class="card-text"><small class="text-body-secondary">Feito em 2 minutos</small></p>
-             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos('Casquinha')">Adicionar na compra</button>
+             <button class="btn btn-addCar" onclick="carrinho.adicionarProdutos(['Casquinha', 3])">Adicionar na compra</button>
             </div>
           </div>
 

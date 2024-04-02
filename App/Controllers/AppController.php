@@ -7,7 +7,6 @@ use MF\Controller\Action;
 use MF\Model\Container;
 
 
-
 class AppController extends Action {
 
 	public function index() {
@@ -36,7 +35,21 @@ class AppController extends Action {
 		$this->render('requests', 'layout1');
 	}
 
+	public function fazerRequest(){
+		session_start();
+		
+		$pedidos = Container::getModel('Pedidos');
+		$pedidos->__set('id_usuario', $_SESSION['id']);
+		for($i = 0; $i < count($_POST);  $i++){
+			$pedidos->__set('pedido', explode(',', $_POST[$i])[0]);
+			$pedidos->__set('valor', explode(',', $_POST[$i])[1]);
+			$pedidos->__set('img', explode(',', $_POST[$i])[0] . '.JPG');
+			$pedidos->fazerPedido();
+		}
+
+		header('Location: /requests?pedidoRealizado');
+		?>
+	<?php }
+
 }
-
-
 ?>
