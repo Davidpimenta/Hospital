@@ -33,6 +33,22 @@ class Pedidos extends Model{
 
   }
 
+  public function retornarTodosPedidos(){
+
+    if($this->__get('id_usuario') == NULL){
+      $this->__set('id_usuario', $_SESSION['id']);
+    }
+
+    $query = "SELECT pedido, img, preco, id_usuario FROM pedidos LEFT JOIN usuarios ON (pedidos.id_usuario = usuarios.id) WHERE id_usuario = :id";
+
+    $stmt = $this->db->prepare($query);
+    $stmt->bindValue(':id', $this->__get('id_usuario'));
+    $stmt->execute();
+    $lista = $stmt->fetchALL(\PDO::FETCH_OBJ);
+    
+    return $lista;
+  }
+
   
 }
 

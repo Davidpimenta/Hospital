@@ -30,42 +30,27 @@
 
           <section class="navOpt sectionPedidos act">
             <div class="row row-cols-1 row-cols-md-2 g-4">
-              <div class="col">
-                <div class="card">
-                  <img src="../images/ChocoCookieChantillyCup.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
+             
+             <?php
+              function mostrarDados($dados){
+                echo '<pre>';
+                print_r($dados);
+                echo '<pre>';
+                foreach($dados as $indice => $dado){
+                  echo '<pre>';
+                  print_r($dado);
+                  echo '<pre>';
+                };
+                ?>
+                
+                <script>
+                  
+                </script>
+                
+              <?php } ?>
+             
+             
+
             </div>
           </section>
 
@@ -77,9 +62,6 @@
             Comprar Novamente
           </section>
 
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </section>
@@ -88,3 +70,15 @@
 <script src="../script/orderHistory.js"></script>
 </body>
 </html>
+
+<!--
+  <div class="col">
+    <div class="card">
+      <img src="../images/ChocoCookieChantillyCup.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+-->

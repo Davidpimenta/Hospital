@@ -27,6 +27,7 @@ class AppController extends Action {
 		$this->validaAutenticacao();
 
 		$this->render('orderhistory', 'layout1');
+		$this->listarPedidos();
 	}
 
 	public function abriRequests(){
@@ -50,6 +51,12 @@ class AppController extends Action {
 		header('Location: /requests?pedidoRealizado');
 		?>
 	<?php }
+	
 
+	public function listarPedidos(){
+		$pedidos = Container::getModel('Pedidos');
+
+		mostrarDados($pedidos->retornarTodosPedidos());
+	}
 }
 ?>
