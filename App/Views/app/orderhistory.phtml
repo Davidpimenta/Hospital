@@ -29,27 +29,49 @@
         <div class="card-body">
 
           <section class="navOpt sectionPedidos act">
-            <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="row row-cols-1 row-cols-md-2 g-4" id="pedidos-div">
              
              <?php
               function mostrarDados($dados){
-                echo '<pre>';
-                print_r($dados);
-                echo '<pre>';
                 foreach($dados as $indice => $dado){
-                  echo '<pre>';
-                  print_r($dado);
-                  echo '<pre>';
-                };
-                ?>
-                
-                <script>
-                  
-                </script>
-                
-              <?php } ?>
-             
-             
+                ?> 
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      const pedidos_div = document.getElementById('pedidos-div');
+
+                      let col = document.createElement('div');
+                      col.classList.add('col');
+
+                      let card = document.createElement('div');
+                      card.classList.add('card');
+
+                      let img = document.createElement('img');
+
+                      img.classList.add('card-img-top')
+                      img.src = '../images/<?php echo $dado->img?>';
+
+                      let card_body = document.createElement('div');
+                      card_body.classList.add('card_body');
+                   
+                      let h5 = document.createElement('h5');
+                      h5.classList.add('card-title');
+                      h5.innerText = '<?php echo $dado->pedido;?>';
+
+                      let p = document.createElement('p');
+                      p.classList.add('card-text');
+                      p.innerText = 'Entregue! Pelo preço de <?php echo $dado->preco?>R$';
+
+                      card_body.appendChild(h5);
+                      card_body.appendChild(p);
+                      card.appendChild(card_body);
+                      card.appendChild(img);
+                      col.appendChild(card);
+                      pedidos_div.appendChild(col);
+
+                    });
+                  </script>
+                <?php };
+                }?>
 
             </div>
           </section>
